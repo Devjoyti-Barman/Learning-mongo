@@ -2,3 +2,9 @@
 1.Do not use mongodb or any other server language on virtual box
   because it is very hard do connect with your web.
 2. If your in windows make sure you install it on Drive: 'C' otherwise it will not work.
+3.install the community Edition
+4. To run mongodb open terminal or command port and enter
+         "C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+    make sure to take care of version,here is 4.2 future it can change
+    
+
