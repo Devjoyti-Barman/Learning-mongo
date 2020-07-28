@@ -1,0 +1,4 @@
+   Makesure do not do these mistakes
+1.Do not use mongodb or any other server language on virtual box
+  because it is very hard do connect with your web.
+2. If your in windows make sure you install it on Drive: 'C' otherwise it will not work.
