@@ -1,0 +1,19 @@
+   Find issuse
+
+1.To find all data which has entry courseCount=4
+  db.studentData.find({"courseCount":4}).pretty()
+  Note: We can't use pretty() to findOne({condition}) .  findOne({"courseCount":4}).pretty() it will give you error.
+        We can only use pretty()  on find()
+
+2. if courseCount=4 is present on multiple data and if we use 
+     db.studentData.findOne({"courseCount":4})
+     it will give first data which match to courseCount 4
+
+3. if we want courseCount greater than 4
+   method:  db.studentData.find({courseCount: {$gt:1} }).pretty()
+   here 'gt' means greater than
+   here 'lt' means less than
+
+   Update issuse
+   Note: do not never ever use update. use updateOne and  updateMany.
+   because if you use update it can mess your database.
