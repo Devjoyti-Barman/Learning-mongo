@@ -1,0 +1,42 @@
+1. To clear terminal or command port use ctrl+l(control plus l).
+2. To exit from mongodb use ctrl+c (control plus c).
+3. To show database:
+    method:  show dbs
+           At first it will show
+           admin  0.000GB
+           config 0.000GB
+           local  0.000GB
+    Note: do not write method:
+4. To create database or to use existing one:
+   method: use students (database_name is students)
+   i. if you have pre existing database it will use that database.
+   ii. if you don't have database with that name, it will create  a database with that name and use it.
+       But you do "show dbs" it will not show that database, untill and unless you save some data or add some collection to database.
+       So, make sure you remember that.
+    Note: make sure you use some database.
+5. How mongodb store => There is some database and inside of it,it has some collection.
+   So, you have to name each collection.
+   And you store data in that collection.
+6. To add one data into collection (here collection_name is studentData):
+    method: db.studentData.insertOne(
+      {
+	     "name": "Hitesh",
+	     "email": "hitesh@hiteshchoudhary.com",
+	     "contact": "9999999999",
+	     "courseCount": 4,
+	     "isVerified": true
+      }
+    )
+
+    Note: remember that,
+    I have a database and it's name is students.
+    And inside of students database it has some collection.
+    And one collection name is studentData.
+    studentData hold some data like above
+7. To fetch some data or to show data:
+   method: db.studentData.find()
+     It will give you big nasty object.
+     To show data in pretty way use
+   method: db.studentData.find().pretty()
+8.Mongodb do not store data as a JSON it store as a BSON.To learn more about this
+  https://www.mongodb.com/json-and-bson
