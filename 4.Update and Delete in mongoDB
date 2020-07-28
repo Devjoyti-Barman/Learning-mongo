@@ -1,0 +1,60 @@
+To delete some data in collection
+   we need To find a key which will differenciate that data from rest of data from collection.
+
+1. To delete one data:
+   method: db.studentData.deleteOne({"email":"abc@gmail.com"})
+   Here email is key
+
+   Suppose you have somedata in studentData collection
+[
+{
+	"name": "Hitesh",
+	"email": "hitesh@hiteshchoudhary.com",
+	"contact": "9999999999",
+	"courseCount": 4,
+	"isVerified": true
+},
+{
+	"name": "Mark",
+	"email": "mark@example.com",
+	"contact": "9999999888",
+	"courseCount": 2,
+	"isVerified": false
+}
+]
+if you use
+      db.studentData.deleteOne({"email":"mark@example.com"})
+      after that your data will look like
+      Here email is key
+[
+{
+	"name": "Hitesh",
+	"email": "hitesh@hiteshchoudhary.com",
+	"contact": "9999999999",
+	"courseCount": 4,
+	"isVerified": true
+}
+]
+Note: you want to delete via courseCount:2 and you have courseCount:2 on multiple data it will only delete first one
+2. To deleteMany
+   First, we need to find key
+   method: db.studentData.deleteMany({"courseCount":2})
+   Here courseCount is key
+Note: if we do 
+        method: db.studentData.deleteMany({})
+        it will delete every data from collection
+
+
+
+3.  Update operetion
+    i.To add a entry into a particular data,
+        First  we need to identify that particular data via key
+        Here key is courseCount  
+        db.studentData.updateOne({"courseCount": 4}, {$set: {fbloggedIn:"yes"}})
+    Note: If you have courseCount:4 on multiple data it will insert the entry fbloggedIn:"yes" to only first-one
+    
+    ii.To add a entry into a Many data
+        First  we need to identify that particular data via key
+        Here key is courseCount  
+        db.studentData.updateMany({"courseCount": 4}, {$set: {fbloggedIn:"yes"}})
+    
