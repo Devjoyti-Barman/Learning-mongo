@@ -1,0 +1,19 @@
+CURD stand for
+C = Create operations
+R = Read operations
+U = Update operations
+D = Delete/Remove operations
+
+1. Create
+   insertOne(data,options)
+   insertMany(data,options)
+2. Read
+   find(filter,options)
+   findOne(filter,options)
+3. Update
+   updateOne(filter,data,options)
+   updateMany(filter,data,options)
+   replaceOne(filter,data,options)
+4. Delete
+   delete(filter,options)
+   deleteMany(filter,options)
