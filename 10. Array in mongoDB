@@ -1,0 +1,20 @@
+1.To insert Data like Array
+ 
+
+ method: db.studentData.updateOne( {name:"Mark"}, {$set: {lastlogin: ["Monday","Tuesday","Wednesday"]} })
+
+ 2. To Print data we do
+      
+      Here find does not work findOne work
+
+      method: db.studentData.findOne({name:"Mark"}).lastlogin
+
+      it will show: ["Monday","Tuesday","Wednesday"]
+
+      Now, if We want to print  elements of lastlogin we can do
+      
+      method-1: db.studentData.findOne({name:"Mark"}).lastlogin[0]
+
+      method-2:  db.studentData.findOne({name:"Mark"}).lastlogin.forEach( (student)=>{printjson(student)})
+
+      method-3:  db.studentData.findOne({name:"Mark"}).lastlogin.forEach( (s)=>{print(s)})
