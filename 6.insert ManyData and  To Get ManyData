@@ -1,0 +1,31 @@
+1. To insert Many Data 
+   
+   method: db.studentData.insert( [ {data},{data} ] )
+   here studentData is collection name
+
+2. To get Many Data
+    
+    If you have lots of data and you use
+
+    method:  db.studentData.find()
+            or
+    method:  db.studentData.find().pretty()
+
+    it will show you enter it to print more,
+    But in pactical we do not use db.studentData.find() or db.studentData.find().pretty(),
+    these are for commant shell or terminal
+
+    To get Data we use
+
+    method: db.studentData.find().forEach( (student) => {printjson(student)})
+
+    Note: Here forEach is loop and (student) => {printjson(student)} is arrow function which exist in javascript
+
+    If you don't know what's happening
+
+    i.   db.studentData.find()  will find the data
+    ii.  forEach is a loop , once finding the data is complete in studentData collection,
+         forEach loop will go to data one by one
+    iii. And To grap data we are using arrow function ()=>{}
+         here student is itrator which hold data
+         And to print the data in json(javascript) type we are using printjson(student)
