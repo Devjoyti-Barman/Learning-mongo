@@ -1,0 +1,63 @@
+      Insert
+
+Now, Suppose we want Insert data which has attributes and attributes can have object data
+ex: 
+    Suppose we have data which look like
+    [
+      {
+          "_id":"abc",
+          "name":"prtety"
+      },
+      { 
+          "_id":"xyz",
+          "name":"emma watson"
+      }
+    ]
+
+    And We want our data to looks like: 
+    [
+      {
+          "_id":"abc",
+          "name":"prtety",
+          "profilepic":{
+              "small":50,
+              "med":100,
+              "large"200
+          }
+      },
+
+      { 
+          "_id":"xyz",
+          "name":"emma watson",
+          "profilepic":{
+              "small":50,
+              "med":100,
+              "large"200
+          }
+      }
+    ]
+
+  So, We can use:
+
+method:  db.studentData.updateMany({},{$set: {profilepic: {small:50,med:100,large:200} } })
+      
+      Find
+
+Now, We want to find data based on profilepic med=100
+  
+  method:   db.studentData.find( {"profilepic.med":100}).pretty()
+
+      iii. Suppose you want change profiepic med 100 to 500 in courseCount:4
+          But if you write this
+         method: db.studentData.updateOne({"courseCount": 4}, {$set: {profilepic: {med:500} } })
+         it will change the whole profiepic.
+        
+        ex: "profilepic":{
+              "small":50,
+              "med":100,
+              "large"200
+            }
+        After doing above operation it will look like this,
+            profilepic":{
+               "med":500
+            }
