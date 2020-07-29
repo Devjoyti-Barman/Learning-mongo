@@ -61,3 +61,6 @@ Now, We want to find data based on profilepic med=100
             profilepic":{
                "med":500
             }
+    The way we are going to only med value is
+
+    method: db.studentData.updateOne({name:"Mark"}, {$set: {"profilepic.med":500}})
