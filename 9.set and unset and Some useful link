@@ -1,0 +1,10 @@
+1.$set   will just add new value in data we have seen how it work
+2.$unset will remove that value in data
+
+link 1:
+https://docs.mongodb.com/manual/
+
+link2:
+https://docs.mongodb.com/manual/crud/
+
+Note: from first link you will find everything
