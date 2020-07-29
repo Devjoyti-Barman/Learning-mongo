@@ -1,0 +1,32 @@
+To Query We have Two Method
+
+i. db.studentData.find( {condition} )
+   
+   Suppose I need to find data which has courseCount=4
+
+   method: db.studentData.find( {courseCount:4} )
+   Note: This will Give you all the data which has courseCount=4
+
+
+ii. db.studentData.find( {condition or where} ,{value} )
+   
+   Note: {condition or where} is a option it means that, in which-data, option is match
+   
+   Suppose, I need to find only email:
+
+    method:    db.studentData.find( {},{email:1} )
+    1.
+      i.Here {} means that I don't care from which-data, this email-data comes from.
+      
+      ii. Here email:1 means show email value and email:0 means don't show this value
+      
+      iii. By deafult It will show you  the _id but if we don't want to show _id
+          
+          method: db.studentData.find( {},{email:1,_id:0} )
+    2.  Suppose, I need to find the email and name in which courseCount =4 and we don't want _id
+        
+        method: db.studentData.find( {courseCount4},{name:1,email:1,_id:0} )
+
+iii.   Suppose we want data in array like
+      
+       method: db.studentData.find( {courseCount4},{name:1,email:1,_id:0} ).toArray()
